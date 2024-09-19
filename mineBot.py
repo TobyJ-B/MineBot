@@ -110,10 +110,11 @@ async def place(ctx, x: int, y:int):
         if (mineMap[x][y] == -1): #Detect if Hit
             game_over = True
             await ctx.send("OUCH! You hit a mine! Game Over")
-            gameboard[x][y] = mine
+            reveal_mines()
+            await ctx.send("Final board with mines revealed")
             board_string = board_to_string()
-            await ctx.send("Updated board:")
             await ctx.send(board_string)
+            game_over = True
         else:
             mine_count = count_surrounding_mines(x, y)
             if mine_count > 0:
