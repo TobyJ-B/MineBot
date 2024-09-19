@@ -77,8 +77,10 @@ def reveal_mines():
                 gameboard[x][y] = mine
 
 def reset_board():
+    global gameboard, mineMap, game_over  # Reset global variables
     gameboard = []
     mineMap = []
+    game_over = False  # Reset game over status
 
 @client.event
 async def on_ready():
@@ -87,7 +89,7 @@ async def on_ready():
 
 @client.command()
 async def start(ctx):
-    game_over = False
+    reset_board()
     make_empty_board()
     place_mines(num_mines)
     board_string = board_to_string()
