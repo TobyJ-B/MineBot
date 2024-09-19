@@ -5,12 +5,12 @@ import os
 
 client = commands.Bot(command_prefix="!", intents = discord.Intents.all())
 
-WIDTH = 2
-HEIGHT = 2
+WIDTH = 8
+HEIGHT = 8
 
 
 gameboard = []
-num_mines = 3
+num_mines = 10
 DIRECTIONS = [(-1, -1), (-1, 0), (-1, 1), (0, -1), (0, 1), (1, -1), (1, 0), (1, 1)]
 
 squares = [':one:',':two:',':three:',':four:',':five:',':six:',':seven:',':eight:']
